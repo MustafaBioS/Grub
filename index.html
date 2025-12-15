@@ -13,18 +13,37 @@
         scale: 1.15;
         cursor: pointer;
       }
+
+      #pfp {
+        transition: all 0.3s ease;
+      }
+
+      #pfp:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      .anc {
+        transition: all 0.3s ease;
+      }
+
+      .anc:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
     </style>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="m-0 p-0 bg-gray-800">
-      <div id="navbar" class="w-full h-20 bg-black flex items-center flex-row">
+      <div id="navbar" class="w-full h-26 bg-black flex items-center flex-row">
 
-        <div id="left" class="bg-black flex items-center flex-row">
-          <img src="image.png" class="rounded-full w-12 h-12 ml-8 select-none">
+        <div id="left" class="w-1/5 bg-black flex items-center flex-row">
+          <img src="image.png" id="pfp" class="rounded-full w-12 h-12 ml-8 select-none">
         </div>
 
-        <div id="center" class="w-full flex items-center justify-center flex-row">
+        <div id="center" class="w-screen flex items-center justify-center flex-row">
           <div id="nameBorder" class="bg-white h-12 w-56 rounded-full flex items-center justify-center flex-row">
             <h1 class="text-black text-2xl font-semibold ml-3.5 mr-4 select-none">Mustafa Hany</h1>
             <img src="GitHub-Mark-ea2971cee799-removebg-preview.png" id="gitLogo" class="rounded-full w-8 h-8 mr-2 select-none">
@@ -32,8 +51,36 @@
           
         </div>
 
-        <div id="right"></div>
-
+        <div id="right" class="flex flex-row">
+          <a class="text-white text-2xl font-semibold mr-8 anc" id="about">About</a>
+          <a class="text-white text-2xl font-semibold mr-8 anc" id="projects">Projects</a>
+          <a class="text-white text-2xl font-semibold mr-8 anc" id="github">Github</a>
+        </div>
       </div>
+
+      <div class="container flex flex-col items-center">
+        <div id="firstRow">
+          
+        </div>
+      </div>
+
+      <script>
+        const gitLogo = document.querySelector("#gitLogo")
+        const pfp = document.querySelector('#pfp');
+        const github = document.querySelector('#github');
+
+
+        github.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS");
+        })
+
+        gitLogo.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS");
+        })
+
+        pfp.addEventListener('click', ()=> {
+          window.open("https://hackclub.enterprise.slack.com/team/U093H5LJHGC");
+        })
+      </script>
   </body>
 </html>
