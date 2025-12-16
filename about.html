@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      #gitLogo {
+        transition: all 0.3s ease;
+      }
+
+      #gitLogo:hover {
+        scale: 1.15;
+        cursor: pointer;
+      }
+
+      #pfp {
+        transition: all 0.3s ease;
+      }
+
+      #pfp:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      .anc {
+        transition: all 0.3s ease;
+      }
+
+      .anc:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      #container {
+        height: calc(100vh - 6.5rem);
+      }
+
+      .btn {
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-8px);
+        background-color: #1f2937;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1365px) {
+        .g {
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          margin-top: 150px;
+        }
+
+        #card3 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 75px;
+        }
+      }
+
+      @media (max-width: 945px) {
+        .g {
+          grid-template-columns: 1fr;
+          padding-inline: 2rem;
+        }
+
+        #card2 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 50px;
+        }
+
+        #card3 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 50px;
+        }
+
+        .btnCon {
+          flex-direction: column;
+        }
+
+        #left {
+          display: none;
+        }
+
+        #center {
+          display: none;
+        }
+
+        #right {
+          display: none;
+        }
+      }
+
+    </style>
+    <title>Grub Portfolio</title>
+    <link rel="icon" href="image.png">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="m-0 p-0 bg-gray-800">
+      <div id="navbar" class="w-full h-26 bg-black flex items-center flex-row">
+
+        <div id="left" class="w-1/5 bg-black flex items-center flex-row">
+          <img src="image.png" id="pfp" class="rounded-full w-12 h-12 ml-8 select-none">
+        </div>
+
+        <div id="center" class="w-screen flex items-center justify-center flex-row">
+          <div id="nameBorder" class="bg-white h-12 w-56 rounded-full flex items-center justify-center flex-row">
+            <h1 class="text-black text-2xl font-semibold ml-3.5 mr-4 select-none">Mustafa Hany</h1>
+            <img src="GitHub-Mark-ea2971cee799-removebg-preview.png" id="gitLogo" class="rounded-full w-8 h-8 mr-2 select-none">
+          </div>
+          
+        </div>
+
+        <div id="right" class="flex flex-row">
+          <a class="text-white text-2xl font-semibold mr-8 anc" id="projects" href="index.html">Projects</a>
+          <a class="text-white text-2xl font-semibold mr-16 underline anc" id="about" href="about.html">About</a>
+        </div>
+      </div>
+
+      <script>
+        const gitLogo = document.querySelector("#gitLogo")
+        const pfp = document.querySelector('#pfp');
+
+        gitLogo.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS");
+        })
+
+        pfp.addEventListener('click', ()=> {
+          window.open("https://hackclub.enterprise.slack.com/team/U093H5LJHGC");
+        })
+      </script>
+  </body>
+</html>

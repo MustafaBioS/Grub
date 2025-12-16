@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <style>
@@ -32,8 +32,76 @@
         cursor: pointer;
       }
 
-    </style>
+      #container {
+        height: calc(100vh - 6.5rem);
+      }
 
+      .btn {
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-8px);
+        background-color: #1f2937;
+        color: white;
+        cursor: pointer;
+      }
+
+      @media (max-width: 1365px) {
+        .g {
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          width: 100%;
+          margin-top: 150px;
+        }
+
+        #card3 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 75px;
+        }
+      }
+
+      @media (max-width: 945px) {
+        .g {
+          grid-template-columns: 1fr;
+          padding-inline: 2rem;
+        }
+
+        #card2 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 50px;
+        }
+
+        #card3 {
+          grid-column: 1 / -1;
+          justify-self: center;
+          margin-top: 50px;
+        }
+
+        .btnCon {
+          flex-direction: column;
+        }
+
+        #left {
+          display: none;
+        }
+
+        #center {
+          display: none;
+        }
+
+        #right {
+          display: none;
+        }
+      }
+
+    </style>
+    <title>Grub Portfolio</title>
+    <link rel="icon" href="image.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="m-0 p-0 bg-gray-800">
@@ -52,26 +120,78 @@
         </div>
 
         <div id="right" class="flex flex-row">
-          <a class="text-white text-2xl font-semibold mr-8 anc" id="about">About</a>
-          <a class="text-white text-2xl font-semibold mr-8 anc" id="projects">Projects</a>
-          <a class="text-white text-2xl font-semibold mr-8 anc" id="github">Github</a>
+          <a class="text-white text-2xl font-semibold mr-8 underline anc" id="projects" href="index.html">Projects</a>
+          <a class="text-white text-2xl font-semibold mr-16 anc" id="about" href="about.html">About</a>
         </div>
       </div>
 
-      <div class="container flex flex-col items-center">
-        <div id="firstRow">
-          
+      <div class="flex flex-col justify-center items-center w-full" id="container">
+        <div class="g grid grid-cols-3 justify-items-center items-center h-full w-full">
+          <div id="card1" class="h-175 w-full max-w-[440px] bg-black rounded-3xl flex flex-col items-center">
+            <h1 class="title text-white text-4xl font-semibold mt-12">Space Viewer</h1>
+            <img src="Screenshot 2025-12-16 171747.png" class="h-75 w-10/12 mt-12 border-2 border-white rounded-xl">
+            <div class="btnCon flex flex-row items-center justify-center w-full gap-6 mt-12">
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="spaceRepo">Repository</button>
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="spaceDemo">Demo</button>
+            </div>
+          </div>
+
+          <div id="card2" class="h-175 w-full max-w-[440px] bg-black rounded-3xl flex flex-col items-center">
+            <h1 class="title text-white text-4xl font-semibold mt-12">Roll</h1>
+            <img src="Screenshot 2025-12-07 235135.png" class="h-75 w-10/12 mt-12 border-2 border-white rounded-xl">
+            <div class="btnCon flex flex-row items-center justify-center w-full gap-6 mt-12">
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="rollRepo">Repository</button>
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="rollDemo">Demo</button>
+            </div>
+          </div>
+
+          <div id="card3" class="h-175 w-full max-w-[440px] bg-black rounded-3xl flex flex-col items-center">
+            <h1 class="title text-white text-4xl font-semibold mt-12">React Clicker</h1>
+            <img src="Screenshot 2025-12-17 002616.png" class="h-75 w-10/12 mt-12 border-2 border-white rounded-xl">
+            <div class="btnCon flex flex-row items-center justify-center w-full gap-6 mt-12">
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="clickRepo">Repository</button>
+              <button class="btn bg-white h-14 w-full max-w-[160px] rounded-lg text-2xl" id="clickDemo">Demo</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <script>
         const gitLogo = document.querySelector("#gitLogo")
         const pfp = document.querySelector('#pfp');
-        const github = document.querySelector('#github');
 
+        const spaceRepo = document.querySelector("#spaceRepo");
+        const spaceDemo = document.querySelector("#spaceDemo");
 
-        github.addEventListener('click', ()=> {
-          window.open("https://github.com/MustafaBioS");
+        const rollRepo = document.querySelector("#rollRepo");
+        const rollDemo = document.querySelector("#rollDemo");
+        
+        const clickRepo = document.querySelector("#clickRepo");
+        const clickDemo = document.querySelector("#clickDemo");
+
+        spaceRepo.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS/Space-Viewer");
+        })
+
+        spaceDemo.addEventListener('click', ()=> {
+          window.open("https://space-viewer.mustafahany2.hackclub.app");
+        })
+
+        rollRepo.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS/Roll");
+        })
+
+        rollDemo.addEventListener('click', ()=> {
+          window.open("https://mustafabios.itch.io/roll");
+        })
+
+        clickRepo.addEventListener('click', ()=> {
+          window.open("https://github.com/MustafaBioS/React-Clicker");
+        })
+
+        clickDemo.addEventListener('click', ()=> {
+          window.open("https://react-clicker-cyan.vercel.app");
         })
 
         gitLogo.addEventListener('click', ()=> {
