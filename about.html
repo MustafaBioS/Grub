@@ -104,7 +104,7 @@
     <link rel="icon" href="image.png">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="m-0 p-0 bg-gray-800">
+  <body class="m-0 p-0 bg-gray-800 overflow-hidden">
       <div id="navbar" class="w-full h-26 bg-black flex items-center flex-row">
 
         <div id="left" class="w-1/5 bg-black flex items-center flex-row">
@@ -120,10 +120,20 @@
         </div>
 
         <div id="right" class="flex flex-row">
-          <a class="text-white text-2xl font-semibold mr-8 anc" id="projects" href="index.html">Projects</a>
+          <a class="text-white text-2xl font-semibold mr-8  anc" id="projects" href="index.html">Projects</a>
           <a class="text-white text-2xl font-semibold mr-16 underline anc" id="about" href="about.html">About</a>
         </div>
       </div>
+      
+      <div class="container mx-auto flex items-center justify-center">
+        <div class="h-180 w-265 mt-6 bg-blue-700 rounded-3xl flex flex-col items-center justify-center">
+          <p class="font-semibold text-3xl w-9/12 text-center text-white">My name is Mustafa Hany, I'm a 15 year old Egyptian who has a passion for programming.</p>
+        </div>
+      </div>
+
+      <footer class="h-30 w-full bg-black mt-8 flex flex-row justify-center items-center">
+          <h1 class="text-white font-semibold text-2xl text-center">Made With Love For Hackclub</h1>
+      </footer>
 
       <script>
         const gitLogo = document.querySelector("#gitLogo")
